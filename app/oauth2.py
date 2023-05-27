@@ -14,7 +14,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 # ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
 SECRET_KEY = os.getenv("secret_key")
 ALGORITHM = os.getenv("algorithm")
-ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("access_token_expire_minutes")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("access_token_expire_minutes"))
 
 def create_access_token(data: dict):
     to_encode = data.copy()
